@@ -80,12 +80,12 @@ cycleTriv();
 function displayTrivia(trivia, heading) {
   //returns a random element of our dataset as an array
   trivium = randElement(trivia);
-  positiveFilter();
+  positiveFilter(trivium);
   //insert elements of our trivium in the HTML of our view
   document.getElementById("triviaheader").innerHTML = heading;
   document.getElementById("trivia").innerHTML = trivium.year + ": " + trivium.text;
 }
-function positiveFilter() {
+function positiveFilter(trivium) {
   for (i = 0; i < sadWords.length; i++) {
     if (trivium.text.includes(sadWords[i].toLowerCase() || sadWords[i])) {
       trivium = randElement(trivia);

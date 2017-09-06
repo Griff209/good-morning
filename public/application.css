@@ -18,6 +18,7 @@ body {
     background-image: url("grootmorning.jpg");
     background-size: 50vh;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 #triviaheader {
   font-size: 5vh;
