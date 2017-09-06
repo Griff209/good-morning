@@ -1,0 +1,40 @@
+@keyframes colorful {
+  0%   {background-color:pink; left:0px; top:0px;}
+  25%  {background-color:peru; left:200px; top:0px;}
+  50%  {background-color:powderblue; left:200px; top:200px;}
+  75%  {background-color:palegreen; left:0px; top:200px;}
+  100% {background-color:pink; left:0px; top:0px;}
+}
+@keyframes growing {
+  0% { font-size: 10vh;}
+  50% { font-size: 15vh;}
+  100% { font-size: 10vh;}
+}
+h1, h2, p {
+  font-family: sans-serif;
+  text-align: center;
+}
+body {
+    background-image: url("grootmorning.jpg");
+    background-size: 50vh;
+}
+#triviaheader {
+  font-size: 5vh;
+}
+#trivia {
+  background-color: pink;
+  animation-name: colorful;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  border-style: groove;
+  font-size: 10vh;
+}
+
+#greeting {
+  color: hsla(0, 100%, 30%, 0.8);
+  font-size: 10vh;
+}
+
+#date {
+  font-size: 5vh;
+}
