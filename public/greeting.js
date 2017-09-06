@@ -64,7 +64,7 @@ function dayCommon(date) {
 
 function triviaController(trivia, heading) {
 //collect our element of trivia which remember is an array, in a variable
-var cycleTriv = function() {
+function cycleTriv() {
   setInterval(function() {displayTrivia(trivia, heading)}, 12000);
 }
 cycleTriv();
@@ -80,23 +80,30 @@ cycleTriv();
 function displayTrivia(trivia, heading) {
   //returns a random element of our dataset as an array
   trivium = randElement(trivia);
-  positiveFilter(trivium);
   //insert elements of our trivium in the HTML of our view
   document.getElementById("triviaheader").innerHTML = heading;
   document.getElementById("trivia").innerHTML = trivium.year + ": " + trivium.text;
 }
-function positiveFilter(trivium) {
-  for (i = 0; i < sadWords.length; i++) {
-    if (trivium.text.includes(sadWords[i].toLowerCase() || sadWords[i])) {
-      trivium = randElement(trivia);
-    }
-  }
-}
-    //take an array of factoids and return one of those factoids, chosen
-    //by Math.random() index
 function randElement(array) {
   //length returns the number of elements in our array, but our array is zero-indexed so we need to remove one from the length to get our upper limit for indexing
   var commonLength = array.length - 1;
+  //generate random integer as index on our array
   randIndex = Math.floor(Math.random() * commonLength);
-  return array[randIndex];
+  //retrieve random element from array
+  trivium = array[randIndex];
+  //filter element against our sadWords and get a new one if filter returns true
+  if (positiveFilter(trivium)) {
+    randElement(array);
+  } else {
+    return trivium;
+  }
+}
+function positiveFilter(trivium) {
+  for (i = 0; i < sadWords.length; i++) {
+    if (trivium.text.includes(sadWords[i].toLowerCase() || sadWords[i])) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
