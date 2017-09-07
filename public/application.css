@@ -16,7 +16,7 @@ h1, h2, p {
 }
 body {
     background-image: url("grootmorning.jpg");
-    background-size: 40vh;
+    background-size: 37vh;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -29,7 +29,7 @@ body {
   animation-duration: 60s;
   animation-iteration-count: infinite;
   border-style: groove;
-  font-size: 9vh;
+  font-size: 8vh;
 }
 
 #greeting {

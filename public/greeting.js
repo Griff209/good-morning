@@ -7,7 +7,7 @@ var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturda
 var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 var dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd",
 "24th","25th","26th","27th","28th","29th","30th","31st"];
-var sadWords = ["dead","died","terrorist","bomb","bomber","murder","death","bombing","killer","rape","kidnap","kidnapper","kidnapped","execution","killed","disaster","terrorism","terror", "hijacked","attack","war","rebel", "massacre"];
+var sadWords = ["dead","died","terrorist","bomb","bomber","murder","death","bombing","killer","rape","kidnap","kidnapper","kidnapped","execution","killed","disaster","terrorism","terror", "hijacked","attack","war","rebel", "massacre","killing"];
 //get the day of the week as a number, use that as an index to find our day of the week name from the days array
 var today = days[rawDate.getDay()];
 var monthName = months[monthIndex];
