@@ -1,9 +1,16 @@
-@keyframes colorful {
+@keyframes colorfulbg {
   0%   {background-color:pink; left:0px; top:0px;}
   25%  {background-color:peru; left:200px; top:0px;}
   50%  {background-color:powderblue; left:200px; top:200px;}
   75%  {background-color:palegreen; left:0px; top:200px;}
   100% {background-color:pink; left:0px; top:0px;}
+}
+@keyframes colorfultxt {
+  0%   {color:darkslateblue; left:0px; top:0px;}
+  25%  {color:cyan; left:200px; top:0px;}
+  50%  {color:bisque; left:200px; top:200px;}
+  75%  {color:crimson; left:0px; top:200px;}
+  100% {color:darkslateblue; left:0px; top:0px;}
 }
 @keyframes growing {
   0% { font-size: 10vh;}
@@ -16,7 +23,7 @@ h1, h2, p {
 }
 body {
     background-image: url("grootmorning.jpg");
-    background-size: 37vh;
+    background-size: 48vh;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -25,7 +32,7 @@ body {
 }
 #trivia {
   background-color: pink;
-  animation-name: colorful;
+  animation-name: colorfulbg;
   animation-duration: 60s;
   animation-iteration-count: infinite;
   border-style: groove;
@@ -33,7 +40,9 @@ body {
 }
 
 #greeting {
-  color: hsla(0, 100%, 30%, 0.8);
+  animation-name: colorfultxt;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
   font-size: 10vh;
 }
 
