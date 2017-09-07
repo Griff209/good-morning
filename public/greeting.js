@@ -100,7 +100,7 @@ function randElement(array) {
 }
 function positiveFilter(trivium) {
   for (i = 0; i < sadWords.length; i++) {
-    if (trivium.text.includes(sadWords[i].toLowerCase() || sadWords[i])) {
+    if (trivium.text.includes(sadWords[i].toLowerCase()) || trivium.text.includes(sadWords[i])) {
       return true;
     } else {
       return false;
