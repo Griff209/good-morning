@@ -49,7 +49,7 @@ xmlhttp.onreadystatechange = function() {
 //select a random event from the file and display its contents in our view
 function myFunction(json) {
   var date = new Date();
-  if (dayCommon(date) == "Monday" || dayCommon(date) == "Wednesday" || dayCommon(date) == "Friday") {
+  if (dayCommon(date) == "Monday" || dayCommon(date) == "Wednesday" || dayCommon(date) == "Saturday") {
       triviaController(json.data.Events, "");
     } else {
         triviaController(json.data.Births, "");
