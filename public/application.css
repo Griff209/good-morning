@@ -21,6 +21,9 @@ h1, h2, p {
   font-family: sans-serif;
   text-align: center;
 }
+iframe {
+  padding-top: 3vh;
+}
 body {
     background-image: url("tenor.gif");
     background-size: 48vh;
