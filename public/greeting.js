@@ -21,10 +21,10 @@ document.getElementById("greeting").innerHTML = "Happy" + " " + today + "!!!";
 //to be used in the path for the xml call to our data folder
 var fname = function() {
   var month = monthIndex + 1;
-  if (month.toString.length == 1) {
+  if (month.toString().length === 1) {
     month = '0' + month;
   }
-  if (dateIndex.toString.length == 1) {
+  if (dateIndex.toString().length === 1) {
     dateIndex = '0' + dateIndex;
   }
   return month + '-' + dateIndex;
