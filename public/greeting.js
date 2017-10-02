@@ -1,6 +1,6 @@
 const rawDate = new Date();
-const monthIndex = rawDate.getMonth();
-const dateIndex = rawDate.getDate();
+var monthIndex = rawDate.getMonth();
+var dateIndex = rawDate.getDate();
 
 //arrays to map Date method return values to commonly used names
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
