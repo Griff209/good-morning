@@ -1,20 +1,20 @@
-var rawDate = new Date();
-var monthIndex = rawDate.getMonth();
-var dateIndex = rawDate.getDate();
+const rawDate = new Date();
+const monthIndex = rawDate.getMonth();
+const dateIndex = rawDate.getDate();
 
 //arrays to map Date method return values to commonly used names
-var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-var dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd",
+const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd",
 "24th","25th","26th","27th","28th","29th","30th","31st"];
-var sadWords = ["dead","died","terrorist","bomb","bomber","murder","death","bombing","killer","rape","kidnap","kidnapper","kidnapped","execution","killed","disaster","terrorism","terror", "hijacked","attack","war","rebel", "massacre","killing"];
+const sadWords = ["dead","died","terrorist","bomb","bomber","murder","death","bombing","killer","rape","kidnap","kidnapper","kidnapped","execution","killed","disaster","terrorism","terror", "hijacked","attack","war","rebel", "massacre","killing"];
 //get the day of the week as a number, use that as an index to find our day of the week name from the days array
-var today = dayCommon(rawDate);
-var monthName = months[monthIndex];
+const today = dayCommon(rawDate);
+const monthName = months[monthIndex];
 
 
 //load our greeting in the view with the name of the day of the week
-document.getElementById("greeting").innerHTML = "Happy" + " " + today + "!!!";
+document.getElementById("greeting").innerHTML = "Happy" + " " + today + "!!! ";
 //document.getElementById("date").innerHTML = monthName + " " + dateCommon(rawDate);
 
 //add 0 to the front of Date function return values if necessary, return name
