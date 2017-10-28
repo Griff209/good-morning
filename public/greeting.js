@@ -1,6 +1,5 @@
 const rawDate = new Date();
-var monthIndex = rawDate.getMonth() + 1;
-var dateIndex = rawDate.getDate();
+const mmDD = [rawDate.getMonth() + 1, rawDate.getDate()];
 
 //arrays to map Date method return values to commonly used names 
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -18,19 +17,12 @@ const commonDay = days[rawDate.getDay()];
 
 //add 0 to the front of Date function return values if necessary, return name
 //to be used in the path for the xml call to our data folder
-var fname = function() {
-	if ((monthIndex).toString().length === 1) {
-		var month = `0${monthIndex}`;
-	}
-	if (dateIndex.toString().length === 1) {
-		dateIndex = `0${dateIndex}`;
-	}
-	return `${month}-${dateIndex}`;
-}
+
+const fName = mmDD.map(index => index <= 1 ? `0${index}` : `${index}`).join("-");
 
 //make xml request to grab our JSON file for today's date in history
 var xmlhttp = new XMLHttpRequest();
-var url = `/data/${fname()}.json`;
+var url = `/data/${fName}.json`;
 
 
 xmlhttp.open("GET", url, true);
@@ -45,11 +37,10 @@ xmlhttp.onreadystatechange = function() {
 };
 
 //load our greeting in the view with the name of the day of the week
-document.getElementById("greeting").innerHTML = `Happy ${days[rawDate.getDay()]} + !!!`;
+document.getElementById("greeting").innerHTML = `Happy ${commonDay} + !!!`;
 
 //select a random event from the file and display its contents in our view
 function myFunction(json) {
-  dateSuffs.forEach((suff) => )
 	if (commonDay == "Monday" || commonDay == "Wednesday" || commonDay == "Friday") {
 		triviaController(json.data.Events, "");
 	} else {
