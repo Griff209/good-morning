@@ -6,9 +6,10 @@ const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Satur
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd",
 	"24th","25th","26th","27th","28th","29th","30th","31st"];
+//filter out negativity / sadness in the trivia
 const sadWords = ["dead","died","terrorist","bomb","bomber","murder","death","bombing","killer","rape","kidnap","kidnapper","kidnapped","execution","killed","disaster","terrorism","terror","hijacked","attack","war","rebel", "massacre","killing"];
 //get the day of the week as a number, use that as an index to find our day of the week name from the days array
-const monthName = months[monthIndex];
+const monthName = months[mmDD[0]];
 const commonDay = days[rawDate.getDay()];
 
 
