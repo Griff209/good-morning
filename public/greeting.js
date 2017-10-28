@@ -58,10 +58,9 @@ function myFunction(json) {
 }
 function triviaController(trivia, heading) {
 //collect our element of trivia which remember is an array, in a variable
-	function cycleTriv() {
+	(function cycleTriv() {
 		setInterval(function() {displayTrivia(trivia, heading)}, 12000);
-	}
-	cycleTriv();
+	})();
 //  var i = i || 1;
 	//function repeatFunc(i) {
 	//i ++;
@@ -73,7 +72,7 @@ function triviaController(trivia, heading) {
 }
 function displayTrivia(trivia, heading) {
 	//returns a random element of our dataset as an array
-	trivium = randElement(trivia.forEach);
+	trivium = randElement(trivia);
 	//insert elements of our trivium in the HTML of our view
 	document.getElementById("triviaheader").innerHTML = heading;
 	document.getElementById("trivia").innerHTML = trivium.year + ": " + trivium.text;
@@ -84,12 +83,12 @@ function randElement(array) {
 	//generate random integer as index on our array
 	let randIndex = Math.floor(Math.random() * commonLength);
 	//retrieve random element from array
-	let trivium = array[randIndex];
+	let testTrivium = array[randIndex];
 	//filter element against our sadWords and get a new one if filter returns true
-	if (positiveFilter(trivium)) {
+	if (positiveFilter(testTrivium)) {
 		randElement(array);
 	} else {
-		return trivium;
+		return testTrivium;
 	}
 }
 function positiveFilter(trivium) {
