@@ -13,7 +13,6 @@ const monthName = months[mmDD[0]];
 const commonDay = days[rawDate.getDay()];
 
 
-
 //document.getElementById("date").innerHTML = monthName + " " + dateCommon(rawDate);
 
 //add 0 to the front of Date function return values if necessary, return name
@@ -70,10 +69,10 @@ function displayTrivia(trivia, heading) {
 	document.getElementById("trivia").innerHTML = trivium.year + ": " + trivium.text;
 }
 function randElement(array) {
-	//length returns the number of elements in our array, but our array is zero-indexed so we need to remove one from the length to get our upper limit for indexing
-	var commonLength = array.length - 1;
-	//generate random integer as index on our array
-	let randIndex = Math.floor(Math.random() * commonLength);
+	/*generate random integer as index on our array
+	length returns the number of elements in our array, but our array is zero-indexed so 
+	we need to remove one from the length to get our upper limit for indexing*/
+	let randIndex = Math.floor(Math.random() * (array.length - 1));
 	//retrieve random element from array
 	let testTrivium = array[randIndex];
 	//filter element against our sadWords and get a new one if filter returns true
@@ -83,12 +82,10 @@ function randElement(array) {
 		return testTrivium;
 	}
 }
+
+//take our trivium
+//compare its contents to our sad words 
+//immediately exit find new triv if we find a match
 function positiveFilter(trivium) {
-	for (i = 0; i < sadWords.length; i++) {
-		if (trivium.text.includes(sadWords[i].toLowerCase()) || trivium.text.includes(sadWords[i])) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+	sadWords.map(word => new RegExp(word, "g")).map(word => word.exec(trivium.text)).find(elem => elem === null) === null ? false : true;
 }
