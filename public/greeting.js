@@ -37,7 +37,7 @@ xmlhttp.onreadystatechange = function() {
 };
 
 //load our greeting in the view with the name of the day of the week
-document.getElementById("greeting").innerHTML = `Happy ${commonDay} + !!!`;
+document.getElementById("greeting").innerHTML = `Happy ${commonDay}!!!`;
 
 //select a random event from the file and display its contents in our view
 function myFunction(json) {
