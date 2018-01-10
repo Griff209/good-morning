@@ -1,5 +1,6 @@
 # good-morning
 Data collected from Wikipedia with script from: https://github.com/muffinista/history_parse
+
 Display a daily greeting and 'this date in history' facts or births, HTML/JS/CSS + Sinatra
 
 Running at http://goodmorning211.herokuapp.com/
