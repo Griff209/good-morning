@@ -1,6 +1,8 @@
 # good-morning
 Data collected from Wikipedia with script from: https://github.com/muffinista/history_parse
-Daily greeting and 'this date in history' facts or births, HTML/JS/CSS + Sinatra
+Display a daily greeting and 'this date in history' facts or births, HTML/JS/CSS + Sinatra
+
+Running at http://goodmorning211.herokuapp.com/
 
 A bit of fun, requested by a house-mate. Used as a playground / learning 
 sandbox for me. Meant to be cast from a tab on my computer to the ChromeCast / our TV. 
