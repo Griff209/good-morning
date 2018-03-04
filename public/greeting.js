@@ -18,7 +18,7 @@ const commonDay = days[rawDate.getDay()];
 //add 0 to the front of Date function return values if necessary, return name
 //to be used in the path for the xml call to our data folder
 
-const fName = mmDD.map(index => index <= 1 ? `0${index}` : `${index}`).join("-");
+const fName = mmDD.map(index => index < 10 ? `0${index}` : `${index}`).join("-");
 
 //make xml request to grab our JSON file for today's date in history
 var xmlhttp = new XMLHttpRequest();
