@@ -1,4 +1,16 @@
 # good-morning
+
+# Getting Started 
+
+1) Install Ruby (see https://www.ruby-lang.org/en/documentation/installation/)
+
+2) Install bundler (gem install bundler) 
+
+3) Install dependencies with bundle install 
+
+4) Run the app with ruby ./goodmorning.rb
+
+# About 
 Data collected from Wikipedia with script from: https://github.com/muffinista/history_parse
 
 Display a daily greeting and 'this date in history' facts or births, HTML/JS/CSS + Sinatra
