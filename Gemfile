@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'nokogiri'
+gem 'nokogiri', ~> 1.8.1
