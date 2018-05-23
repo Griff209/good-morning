@@ -15,7 +15,7 @@
 Display a daily greeting and Wikipedia-sourced facts or births from this day in history. Made with HTML/JS/CSS + Sinatra
 
 A bit of fun, requested by a house-mate. Used as a playground / learning 
-sandbox for me. Meant to be cast from Chrome to my TV. Exploring functional programming with JS, basic Sinatra concepts. 
+sandbox for me. Meant to be cast from Chrome to my TV. Exploring functional programming with JS, animation with CSS, basic Sinatra concepts. 
 
 Data collected from Wikipedia with script from: https://github.com/muffinista/history_parse
 
