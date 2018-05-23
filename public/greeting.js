@@ -48,7 +48,7 @@ function eventOrBorn(triv) {
 function triviaController(trivia, heading) {
 //collect our element of trivia which remember is an array, in a variable
 	(function cycleTriv() {
-		setInterval(function() {displayTrivia(posTrivia, heading)}, 12000);
+		setInterval(function() {displayTrivia(trivia, heading)}, 12000);
 	})();
 }
 function displayTrivia(trivia, heading) {
