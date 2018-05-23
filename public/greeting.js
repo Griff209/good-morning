@@ -85,5 +85,5 @@ function randElement(array) {
 
 //take each sad word, turn into case insensitive regex, look for it in trivium.text, return true if found
 function positiveFilter(trivium) {
-	sadWords.map(word => new RegExp(word, "g")).map(word => word.exec(trivium.text)).find(elem => elem === null) ? true : false;
+	return sadWords.map(word => new RegExp(word, "g")).map(word => word.exec(trivium.text)).find(elem => elem === null) ? false : true;
 }
