@@ -28,8 +28,8 @@ xmlhttp.send();
 //when the request is done with status success, parse our file
 xmlhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
-		var myObj = JSON.parse(this.response);
-		myFunction(myObj);
+		var triv = JSON.parse(this.response);
+		eventOrBorn(triv);
 	}
 };
 
@@ -37,17 +37,18 @@ xmlhttp.onreadystatechange = function() {
 document.getElementById("greeting").innerHTML = `Happy ${commonDay}!!!`;
 
 //select a random event from the file and display its contents in our view
-function myFunction(json) {
+function eventOrBorn(triv) {
 	if (commonDay == "Monday" || commonDay == "Wednesday" || commonDay == "Friday") {
-		triviaController(json.data.Events, "");
+		triviaController(triv.data.Events, "");
 	} else {
-		triviaController(json.data.Births, "Born ");
+		triviaController(triv.data.Births, "Born ");
 	}
 }
+
 function triviaController(trivia, heading) {
 //collect our element of trivia which remember is an array, in a variable
 	(function cycleTriv() {
-		setInterval(function() {displayTrivia(trivia, heading)}, 12000);
+		setInterval(function() {displayTrivia(posTrivia, heading)}, 12000);
 	})();
 }
 function displayTrivia(trivia, heading) {
@@ -64,15 +65,5 @@ function randElement(array) {
 	let randIndex = Math.floor(Math.random() * (array.length - 1));
 	//retrieve random element from array
 	let testTrivium = array[randIndex];
-	//filter element against our sadWords and get a new one if filter returns true
-	if (positiveFilter(testTrivium)) {
-		randElement(array);
-	} else {
-		return testTrivium;
-	}
-}
-
-//take each sad word, turn into case insensitive regex, look for it in trivium.text, return true if found
-function positiveFilter(trivium) {
-	return sadWords.map(word => new RegExp(word, "g")).map(word => word.exec(trivium.text)).find(elem => elem === null) ? false : true;
+	return testTrivium;
 }
