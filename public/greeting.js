@@ -65,9 +65,11 @@ function randElement(array) {
 	//retrieve random element from array
 	let testTrivium = array[randIndex];
 	//filter element against our sadWords and get a new one if filter returns true
-	while (positiveFilter(testTrivium)) {
+	if (positiveFilter(testTrivium)) {
 		randElement(array);
-	} return testTrivium;
+	} else {
+		return testTrivium;
+	}
 }
 
 //take each sad word, turn into case insensitive regex, look for it in trivium.text, return true if found
