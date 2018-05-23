@@ -12,9 +12,6 @@ const sadWords = ["dead","died","terrorist","bomb","bomber","murder","death","bo
 const monthName = months[mmDD[0]];
 const commonDay = days[rawDate.getDay()];
 
-
-//document.getElementById("date").innerHTML = monthName + " " + dateCommon(rawDate);
-
 //add 0 to the front of Date function return values if necessary, return name
 //to be used in the path for the xml call to our data folder
 
@@ -52,14 +49,6 @@ function triviaController(trivia, heading) {
 	(function cycleTriv() {
 		setInterval(function() {displayTrivia(trivia, heading)}, 12000);
 	})();
-//  var i = i || 1;
-	//function repeatFunc(i) {
-	//i ++;
-	//if (i < 50) {
-	//  displayTrivia(trivia, heading);
-	//  console.log(i);
-	//  return repeatFunc(i);
-	//  }
 }
 function displayTrivia(trivia, heading) {
 	//returns a random element of our dataset as an array
