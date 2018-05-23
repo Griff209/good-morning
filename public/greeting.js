@@ -54,8 +54,3 @@ xmlhttp.onreadystatechange = function() {
 		eventOrBirth(triv);
 	}
 };
-
-
-
-
-
