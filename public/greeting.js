@@ -22,7 +22,7 @@ const fName = mmDD.map(index => index < 10 ? `0${index}` : `${index}`).join("-")
 
 //make xml request to grab our JSON file for today's date in history
 var xmlhttp = new XMLHttpRequest();
-var url = `https://history.muffinlabs.com/date`;
+var url = `/data/${fName}.json`;
 
 
 xmlhttp.open("GET", url, true);
