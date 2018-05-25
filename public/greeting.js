@@ -1,4 +1,4 @@
-const rawDate, mmDD, days, commonday, months, monthName, dateSuffs, sadWords, fname, xmlhttp, url;
+const rawDate, mmDD, days, commonday, months, monthName, dateSuffs, sadWords, fname, xmlhttp, file;
 
 days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
