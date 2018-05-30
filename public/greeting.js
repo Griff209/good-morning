@@ -13,6 +13,11 @@ commonDay = days[rawDate.getDay()];
 document.getElementById("greeting").innerHTML = `Happy ${commonDay}!!!`;
 
 fName = mmDD.map(index => index < 10 ? `0${index}` : `${index}`).join("-");
+xmlhttp = new XMLHttpRequest();
+file = `/data/${fName}.json`;
+
+xmlhttp.open("GET", file, true);
+xmlhttp.send();
 
 function randElement(array) {
 	let randIndex = Math.floor(Math.random() * (array.length - 1));
@@ -39,12 +44,6 @@ function eventOrBirth(triv) {
 		triviaController(triv.data.Births, "Born ");
 	}
 }
-
-xmlhttp = new XMLHttpRequest();
-file = `/data/${fName}.json`;
-
-xmlhttp.open("GET", file, true);
-xmlhttp.send();
 
 xmlhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
