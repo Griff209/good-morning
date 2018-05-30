@@ -1,4 +1,4 @@
-var rawDate, mmDD, days, commonday, months, monthName, dateSuffs, sadWords, fname, xmlhttp, file;
+var rawDate, mmDD, days, commonDay, months, monthName, dateSuffs, fname, xmlhttp, file;
 
 days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
