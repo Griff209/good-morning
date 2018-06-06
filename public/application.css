@@ -1,21 +1,16 @@
 @keyframes colorfulbg {
-  0%   {background-color:pink; left:0px; top:0px;}
-  25%  {background-color:peru; left:200px; top:0px;}
-  50%  {background-color:powderblue; left:200px; top:200px;}
-  75%  {background-color:palegreen; left:0px; top:200px;}
-  100% {background-color:pink; left:0px; top:0px;}
+  0%   {background-color:pink}
+  25%  {background-color:peru}
+  50%  {background-color:powderblue}
+  75%  {background-color:palegreen}
+  100% {background-color:pink}
 }
 @keyframes colorfultxt {
-  0%   {color:darkslateblue; left:0px; top:0px;}
-  25%  {color:cyan; left:200px; top:0px;}
-  50%  {color:bisque; left:200px; top:200px;}
-  75%  {color:crimson; left:0px; top:200px;}
-  100% {color:darkslateblue; left:0px; top:0px;}
-}
-@keyframes growing {
-  0% { font-size: 10vh;}
-  50% { font-size: 15vh;}
-  100% { font-size: 10vh;}
+  0%   {color:darkslateblue}
+  25%  {color:cyan}
+  50%  {color:bisque}
+  75%  {color:crimson}
+  100% {color:darkslateblue}
 }
 h1, h2, p {
   font-family: sans-serif;
