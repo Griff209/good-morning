@@ -1,0 +1,17 @@
+{
+  "name": "jan",
+  "version": "0.1.0",
+  "description": "",
+  "main": "jan.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "griff",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
