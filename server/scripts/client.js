@@ -1,7 +1,8 @@
 const http = require('http');
 const events = require('events');
-const eventEmitter = new events.EventEmitter();
+
 const response = {};
+const eventEmitter = new events.EventEmitter();
 
 module.exports.response = response;
 module.exports.request = request;

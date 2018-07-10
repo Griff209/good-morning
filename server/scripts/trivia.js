@@ -1,13 +1,23 @@
 const client = require('./client.js');
 
+const trivia = {};
+const sadWords = [
+  "kidnap", 
+  "kill", 
+  "attack", 
+  "war", 
+  "terror", 
+  `dea(d|th)`, 
+  "die", 
+  "assassin", 
+  "murder",
+];
 const options = {
   hostname: 'history.muffinlabs.com',
   port: 80,  
   path: '/date', 
   method: 'GET',
 }
-
-const trivia = {};
 
 //demo
 tryRequest((trivia) => console.log(trivia));
@@ -27,11 +37,14 @@ function parseTrivia(response, callback) {
   callback(trivia);
 }
 
-const expressions = []; 
-const sadWords = ["kidnap", "kill", "attack", "war", "terror", `dea(d|th)`, "die", "assassin", "murder"];
-sadWords.forEach((word) => expressions.push(new RegExp(`\\b${word}.*\\b`)));
+function setExpressions(words) {
+  let expressions = []; 
+  words.forEach((word) => expressions.push(new RegExp(`\\b${word}.*\\b`)));
+  return expressions;
+}
 
 function testExpressions(event) {
+  let expressions = setExpressions(sadWords);
 	let text = event.text;
 	let passed = true;
 	for (let regex of expressions) {
