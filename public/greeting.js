@@ -8,8 +8,6 @@ const dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10
 const monthName = months[mmDD[0]];
 const commonDay = days[(new Date()).getDay()];
 
-myFunction(myObj);
-
 //load our greeting in the view with the name of the day of the week
 document.getElementById("greeting").innerHTML = `Happy ${commonDay}!!!`;
 
