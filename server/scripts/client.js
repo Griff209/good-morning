@@ -14,7 +14,7 @@ function request(bodyType, options, eventHandler) {
       body += chunk;
     });
     res.on('end', () => {
-      console.log(`Request completed with code ${[response.statusCode = req.res.statusCode]}`);
+      console.log(`Request completed with code ${response.statusCode = req.res.statusCode}`);
       let supported = 'JSON';
       switch(String(bodyType).toUpperCase()) {
         case 'JSON': 
