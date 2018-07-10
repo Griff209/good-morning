@@ -7,7 +7,7 @@ module.exports.response = response;
 
 module.exports.request = request;
 function request(bodyType, options, eventHandler) {
-  var body = ''
+  let body = ''
   
   let req = http.request(options, (res) => {
     res.on('data', (chunk) => {
