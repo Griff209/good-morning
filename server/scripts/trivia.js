@@ -32,8 +32,8 @@ function tryRequest(callback) {
 
 function parseTrivia(response, callback) {
   trivia.statusCode = response.statusCode; 
-  trivia.births = response.body.Births;
-  trivia.events = response.body.Events.filter(testExpressions);
+  trivia.births = response.body.data.Births;
+  trivia.events = response.body.data.Events.filter(testExpressions);
   callback(trivia);
 }
 

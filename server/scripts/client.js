@@ -19,7 +19,7 @@ function request(bodyType, options, eventHandler) {
       let supported = 'JSON';
       switch(String(bodyType).toUpperCase()) {
         case 'JSON': 
-          response.body = JSON.parse(body).data;
+          response.body = JSON.parse(body);
           eventEmitter.emit('done');
           break;
         default: 
