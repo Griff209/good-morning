@@ -7,7 +7,7 @@ const months = ["January","February","March","April","May","June","July","August
 const dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd",
 	"24th","25th","26th","27th","28th","29th","30th","31st"];
 //filter out negativity / sadness in the trivia
-const sadWords = ["dead","died","terrorist","bomb","bomber","murder","death","bombing","killer","rape","kidnap","kidnapper","kidnapped","execution","killed","disaster","terrorism","terror","hijacked","attack","war","rebel", "massacre","killing"];
+
 //get the day of the week as a number, use that as an index to find our day of the week name from the days array
 const monthName = months[mmDD[0]];
 const commonDay = days[rawDate.getDay()];
@@ -15,26 +15,7 @@ const commonDay = days[rawDate.getDay()];
 
 //document.getElementById("date").innerHTML = monthName + " " + dateCommon(rawDate);
 
-//add 0 to the front of Date function return values if necessary, return name
-//to be used in the path for the xml call to our data folder
-
-const fName = mmDD.map(index => index < 10 ? `0${index}` : `${index}`).join("-");
-
-//make xml request to grab our JSON file for today's date in history
-var xmlhttp = new XMLHttpRequest();
-var url = `https://history.muffinlabs.com/date`;
-
-
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-
-//when the request is done with status success, parse our file
-xmlhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-		var myObj = JSON.parse(this.response);
-		myFunction(myObj);
-	}
-};
+myFunction(myObj);
 
 //load our greeting in the view with the name of the day of the week
 document.getElementById("greeting").innerHTML = `Happy ${commonDay}!!!`;
@@ -81,9 +62,4 @@ function randElement(array) {
 	} else {
 		return testTrivium;
 	}
-}
-
-//take each sad word, turn into case insensitive regex, look for it in trivium.text, return true if found
-function positiveFilter(trivium) {
-	sadWords.map(word => new RegExp(word, "g")).map(word => word.exec(trivium.text)).find(elem => elem === null) ? true : false;
 }

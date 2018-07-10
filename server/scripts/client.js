@@ -1,11 +1,11 @@
 const http = require('http');
 const events = require('events');
 const eventEmitter = new events.EventEmitter();
-
 const response = {};
-module.exports.response = response;
 
+module.exports.response = response;
 module.exports.request = request;
+
 function request(bodyType, options, eventHandler) {
   let body = ''
   
@@ -14,7 +14,7 @@ function request(bodyType, options, eventHandler) {
       body += chunk;
     });
     res.on('end', () => {
-      console.log(`Request completed with code ${req.res.statusCode}`);
+      console.log(`Request completed with code ${[response.statusCode = req.res.statusCode]}`);
       let supported = 'JSON';
       switch(String(bodyType).toUpperCase()) {
         case 'JSON': 

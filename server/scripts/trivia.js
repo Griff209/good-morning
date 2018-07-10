@@ -10,17 +10,18 @@ const options = {
 const trivia = {};
 
 //demo
-buildView((trivia) => console.log(trivia));
+tryRequest((trivia) => console.log(trivia));
 
-function buildView(callback) {
+function tryRequest(callback) {
   try {
-    client.request('JSON', options, () => getTrivia(client.response, callback));
+    client.request('JSON', options, () => parseTrivia(client.response, callback));
   } catch(e) {
     console.error(e.message);
   }
 }
 
-function getTrivia(response, callback) {
+function parseTrivia(response, callback) {
+  trivia.statusCode = response.statusCode; 
   trivia.births = response.body.Births;
   trivia.events = response.body.Events.filter(testExpressions);
   callback(trivia);
