@@ -1,23 +1,17 @@
-var rawDate, mmDD, days, commonDay, dateSuffs, fname, xmlhttp, file;
+//arrays to map Date method return values to commonly used names 
+const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd",
+	"24th","25th","26th","27th","28th","29th","30th","31st"];
 
-days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+//get the day of the week as a number, use that as an index to find our day of the week name from the days array
+const monthName = months[mmDD[0]];
+const commonDay = days[(new Date()).getDay()];
 
-dateSuffs = [ 0, "1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th",
-	     "20th","21st","22nd","23rd","24th","25th","26th","27th","28th","29th","30th","31st"];
+myFunction(myObj);
 
-rawDate = new Date();
-
-mmDD = [rawDate.getMonth() + 1, rawDate.getDate()];
-
-commonDay = days[rawDate.getDay()];
+//load our greeting in the view with the name of the day of the week
 document.getElementById("greeting").innerHTML = `Happy ${commonDay}!!!`;
-
-fName = mmDD.map(index => index < 10 ? `0${index}` : `${index}`).join("-");
-xmlhttp = new XMLHttpRequest();
-file = `/data/${fName}.json`;
-
-xmlhttp.open("GET", file, true);
-xmlhttp.send();
 
 function randElement(array) {
 	let randIndex = Math.floor(Math.random() * (array.length - 1));
@@ -43,11 +37,5 @@ function eventOrBirth(triv) {
 	} else {
 		triviaController(triv.data.Births, "Born ");
 	}
-}
 
-xmlhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-		let triv = JSON.parse(this.response);
-		eventOrBirth(triv);
-	}
-};
+}
