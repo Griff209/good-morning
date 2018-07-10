@@ -9,8 +9,8 @@ const options = {
 
 const trivia = {};
 
-//example
-//buildView((trivia) => console.log(trivia));
+//demo
+buildView((trivia) => console.log(trivia));
 
 function buildView(callback) {
   try {
