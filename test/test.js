@@ -1,23 +1,17 @@
 const assert = require('assert');
+const events = require('events');
+const client = require('../library/client.js');
 
-const client = Object.create(null);
+describe('client', function() {
+  describe('response', function() {
+    it('exists', function() {
+      assert(client.response);
+    });
+  });
 
-client.response = {
-  body: {
-    Births: 'The Jan',
-    Events: [{
-      text: 'The jan is born',
-    }]
-  },
-};
-
-//Reference 
-/*
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1,2,3].indexOf(4), -1);
+  describe('#request()', function() {
+    it('returns an event emitter', function() {
+      assert(client.request('JSON',{},() => 0).constructor === events.EventEmitter);
     });
   });
 });
-*/

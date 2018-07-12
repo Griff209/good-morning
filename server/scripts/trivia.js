@@ -1,4 +1,4 @@
-const client = require('./client.js');
+const client = require('../library/client.js');
 
 const trivia = {};
 const sadWords = [
